@@ -24,4 +24,17 @@ const getAllDogs = (req,res) => {
     })
 }
 
-module.exports = {createDog, getAllDogs}
+const deleteDog = (req,res) =>{
+    let dog = req.body
+    model.remove(dog, (error, result)=>{
+        if(error){
+            res.json({statusCode:400, message:error})
+        }
+        else{
+            res.json({statusCode:200, data: result, message: 'Successfully removed'})
+        }
+    })
+}
+
+
+module.exports = {createDog, getAllDogs, deleteDog}

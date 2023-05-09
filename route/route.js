@@ -10,4 +10,7 @@ router.get('/api/dogs',(req,res) => {
     controller.getAllDogs(req,res)
 })
 
+router.delete('/api/dogs',(req,res) => {
+    controller.deleteDog(req,res)
+})
 module.exports = router
